@@ -1,7 +1,18 @@
 {
 	"name": "lquip",
 	"version": "1.0.0",
-	"module": "src/index.ts",
+	"description": "A lightweight library for generating smarter low-quality image placeholders (LQIP).",
+	"author": "Jack Weilage",
+	"keywords": [
+		"lqip",
+		"placeholder",
+		"css",
+		"lazy-loading"
+	],
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"dependencies": {
 		"sharp": "^0.34.3"
 	},
@@ -10,6 +21,10 @@
 		"@types/bun": "^1.2.19",
 		"typescript": "^5.9.2"
 	},
+	"files": [
+		"dist",
+		"README.md"
+	],
 	"exports": {
 		".": {
 			"require": "./dist/index.js",

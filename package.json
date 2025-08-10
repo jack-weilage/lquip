@@ -1,0 +1,31 @@
+{
+	"name": "lquip",
+	"version": "1.0.0",
+	"module": "src/index.ts",
+	"dependencies": {
+		"sharp": "^0.34.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.1.4",
+		"@types/bun": "^1.2.19",
+		"typescript": "^5.9.2"
+	},
+	"exports": {
+		".": {
+			"require": "./dist/index.js",
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./css": "./dist/lqip-decoder.css"
+	},
+	"scripts": {
+		"build": "bun build src/index.ts --outdir dist --target node && bun run build:css && bun run build:types",
+		"build:css": "bun build src/css/lqip-decoder.css --outfile dist/lqip-decoder.css",
+		"build:types": "tsc -p tsconfig.json",
+		"test": "bun test",
+		"lint": "biome check",
+		"format": "biome format --write",
+		"prepublishOnly": "bun run build"
+	},
+	"type": "module"
+}
